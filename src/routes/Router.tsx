@@ -1,9 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-
+import MainLayout from "../layouts/MainLayout";
+import Dashboard from "../components/layout/Dashboard";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <h1>Cricket Tournament Management System</h1>,
+    element: <MainLayout/>,
+    children: [
+        {
+            index: true,
+            element: <Dashboard/>
+        }
+    ]
   },
 ]);
 
